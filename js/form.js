@@ -1,12 +1,13 @@
 const form = document.querySelector('#form');
 const launchBtn = document.querySelector('#launch-btn');
-const goToFormButton = document.querySelector('#go-to-form-btn');
 const userEmailField = document.querySelector('#user-email');
 const userNameField = document.querySelector('#user-name');
 
+const goToFormButton = document.querySelector('#go-to-form-btn');
+
 goToFormButton.addEventListener('click', function (e) {
     e.preventDefault();
-    form.scrollIntoView();
+    document.querySelector('#form-section').scrollIntoView({ behavior: 'smooth', block: 'start', duration: 600 });
 });
 
 function clearFormFields() {
@@ -27,7 +28,8 @@ function addGooseElement() {
 
 function showGooseAnim() {
     const gooseEl = document.querySelector('.gus-anim');
-
+    gooseEl.style.transitionDuration = '300ms';
+    
     gooseEl.setAttribute('src', './img/gus-anim.gif');
     
     setTimeout(() => {
@@ -60,3 +62,6 @@ form.addEventListener('submit', (e) => {
         launchBtn.style.opacity = '1';
     }, 4000);
 });
+
+const img = new Image();
+img.src = './img/gus-anim.gif';
