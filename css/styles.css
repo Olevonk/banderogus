@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -5,11 +9,13 @@ html {
 body {
     font-family: "Montserrat", sans-serif;
     margin: 0;
+    overflow-x: hidden;
 }
 
 .main-page {
     width: 100%;
     background: linear-gradient(270deg, #a5deff 0%, #fcfefe 100%);
+    overflow: hidden;
 }
 
 .main-page-text-container {
@@ -24,8 +30,22 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1170px;
+    width: 100%;
+    max-width: 1170px;
     position: relative;
+    padding: 0 15px;
+    box-sizing: border-box; 
+}
+
+.main-page-left-side {
+    max-width: 100%;
+}
+
+.gus-img {
+    width: 50%;
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
 }
 
 .main-page-hello-text {
@@ -66,9 +86,14 @@ body {
 }
 
 .goit-logo {
-    position: absolute;
-    top: 32px;
-    left: 0;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.facts {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .facts-title {
@@ -85,9 +110,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1170px;
+    width: 100%;
+    max-width: 1170px;
     position: relative;
     gap: 24px;
+    padding: 0 15px;
+    box-sizing: border-box; 
 }
 
 .facts {
@@ -117,6 +145,11 @@ body {
     flex: 1;
     margin: 0 8px;
     box-sizing: border-box;
+    width: 33%;
+}
+
+.facts-item-img {
+    width: 100%;
 }
 
 .facts-item-title {
@@ -148,6 +181,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .form {
@@ -243,4 +277,136 @@ body {
     width: 100%;
     z-index: 2;
     pointer-events: none;
+}
+
+@media screen and (max-width: 1170px) {
+    .wrapper-main {
+        width: 100%;
+    }
+    
+    .wrapper-facts {
+        width: 100%;
+    }
+
+    .main-page-left-side {
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .main-page-text-container {
+        padding: 20px;
+    }
+    
+    .main-page-title {
+        font-size: 44px;
+    }
+
+    .main-page-hello-text {
+        margin-bottom: 20px;
+    }
+
+    .gus-img {
+        align-self: flex-end;
+    }
+}
+
+@media screen and (max-width: 785px) {
+
+    .wrapper-main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .wrapper-facts {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-page-left-side {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-page-text-container {
+        text-align: center;
+    }
+
+    .gus-img {
+        align-self: center;
+    }
+
+    .facts-descr {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .facts-item {
+        width: 90%;
+    }
+
+    .gus-img {
+        width: 70%;
+    }
+
+    .form {
+        margin: 0 30px;
+        padding: 30px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .form {
+        margin: 0 30px;
+        padding: 30px;
+    }
+
+    .form-field-label {
+        align-self: center;
+    }
+    .form-trezub {
+        margin-bottom: 20px;
+    }
+
+    .form-title {
+        font-size: 22px;
+    }
+
+    .form-descr {
+        margin-bottom: 16px;
+    }
+
+    .form-field-name {
+        margin-bottom: 16px;
+    }
+
+    .form-field-email {
+        margin-bottom: 30px;
+    }
+
+    .facts-title {
+        font-size: 28px;
+        padding: 10px;
+    }
+
+    .main-page-title {
+        font-size: 34px;
+        margin-bottom: 20px;
+    }
+
+    .main-page-hello-text {
+        margin-bottom: 16px;
+    }
+
+    .main-page-descr {
+        margin-bottom: 20px;
+    }
+
+    .form-input {
+        padding: 8px 16px;
+    }
+
 }
